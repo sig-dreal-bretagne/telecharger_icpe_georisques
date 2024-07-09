@@ -1,0 +1,5 @@
+urllib.request==3.9
+requests==2.27.1
+json==2.0.9
+geojson==3.1.0
+csv==1.0
