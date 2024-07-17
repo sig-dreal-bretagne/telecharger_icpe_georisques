@@ -7,5 +7,5 @@ Il a été développé en python 3.9
 Lancement en ligne de commande :
 "python   chemin_du_script.py   paramètre1   paramètre2"
 avec :
-- paramètre1 = chemin du csv contenant les communes à interroger
-- paramètre2 = colonne qui contient les codes INSEE
+- paramètre1 = chemin du fichier contenant les codes communes (format csv)
+- paramètre2 = nom de la colonne qui contient les codes communes (code INSEE sur 5 caractères)
