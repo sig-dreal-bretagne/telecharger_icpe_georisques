@@ -14,14 +14,22 @@ INSTALLATION
 
 LINUX :
 git clone https://github.com/sig-dreal-bretagne/telecharger_icpe_georisques
+
 python3 -m venv .venv
+
 source .venv/bin/activate
+
 pip install --upgrade pip
+
 pip install -r requirements.txt
 
 WINDOWS :
 git clone https://github.com/sig-dreal-bretagne/telecharger_icpe_georisques
+
 python -m venv .venv
+
 .venv\scripts\activate
+
 pip install --upgrade pip
+
 pip install -r telecharger_icpe_georisques\requirements.txt
