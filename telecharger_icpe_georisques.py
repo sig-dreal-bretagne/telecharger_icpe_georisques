@@ -38,10 +38,6 @@ import csv
 '''besoin pour dater le csv produit'''
 import datetime
 
-#pour connaitre la version des modules
-from importlib_metadata import version
-import pkg_resources
-
 
 """fonction date"""
 def date_AAAA_MM_JJ():
@@ -63,7 +59,7 @@ def telecharger_100_lignes(url, liste_pour_geojson):
     except urllib.error.URLError as erreur:
         #si erreur : signaler erreur et on s'arrête
         print (str(erreur),"pour l'url ",url)
-        print("il faut se déconnecter du réseau Ministère")
+        print("cause possible : connexion au réseau Ministère")
         sys.exit()
     else:
         reponse = requests.get(url, allow_redirects=True)
@@ -159,16 +155,18 @@ def main(fichier_communes, champ_code_insee):
     #télécharger les ICPE pour chaque commune de la liste
     i_commune=1
     for commune in reader:
-        code_insee = commune[champ_code_insee]
         print()
         print("téléchargement de la commune",i_commune)
+
+        code_insee = commune[champ_code_insee]
         page=1
+        url_next = 'https://www.georisques.gouv.fr/api/v1/installations_classees?code_insee='+code_insee+'&page='+str(page)+'&page_size=100'
 
         #Tant qu'url_next n'est pas vide, télécharger les 100 lignes suivantes
         while url_next!=None:
-            url_next = 'https://www.georisques.gouv.fr/api/v1/installations_classees?code_insee='+code_insee+'&page='+page+'&page_size=100'
             url_next, liste_pour_geojson = telecharger_100_lignes(url_next,liste_pour_geojson)
             page = page + 1
+            url_next = 'https://www.georisques.gouv.fr/api/v1/installations_classees?code_insee='+code_insee+'&page='+str(page)+'&page_size=100'
 
         #url_next est vide, on passe à la commune suivante
         i_commune = i_commune + 1
