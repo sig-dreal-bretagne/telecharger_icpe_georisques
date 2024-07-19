@@ -9,3 +9,21 @@ Lancement en ligne de commande :
 avec :
 - paramètre1 = chemin du fichier contenant les codes communes (format csv)
 - paramètre2 = nom de la colonne qui contient les codes communes (code INSEE sur 5 caractères)
+
+INSTALLATION
+
+Linux :
+git clone https://github.com/sig-dreal-bretagne/telecharger_icpe_georisques
+python3 -m venv .venv
+source .venv/bin/activate
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+Windows :
+git clone https://github.com/sig-dreal-bretagne/telecharger_icpe_georisques
+python -m venv .venv
+.venv\scripts\activate
+
+pip install --upgrade pip
+pip install -r telecharger_icpe_georisques\requirements.txt
