@@ -5,10 +5,11 @@ Il organise les attributs json en table, classe les activités par régime, géo
 Il a été développé en python 3.9
 
 Lancement en ligne de commande :
-"python   chemin_du_script.py   paramètre1   paramètre2"
+"python   <chemin du script.py>   <paramètre1>   <paramètre2>"
 avec :
 - paramètre1 = chemin du fichier contenant les codes communes (format csv)
 - paramètre2 = nom de la colonne qui contient les codes communes (code INSEE sur 5 caractères)
+Le geojson résultat est placé dans le dossier du fichier contenant les codes communes.
 
 INSTALLATION
 
