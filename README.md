@@ -9,6 +9,8 @@ Lancement en ligne de commande :
 avec :
 - paramètre1 = chemin du fichier contenant les codes communes (format csv)
 - paramètre2 = nom de la colonne qui contient les codes communes (code INSEE sur 5 caractères)
+ex : "$python telecharger_icpe_georisques.py exemple_liste_de_communes_region_Bretagne.csv INSEE_COM"
+
 Le geojson résultat est placé dans le dossier du fichier contenant les codes communes.
 
 INSTALLATION
